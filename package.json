@@ -1,0 +1,26 @@
+{
+  "name": "socol-oracle",
+  "version": "1.0.0",
+  "description": "socol test project",
+  "main": "hardhat.config.ts",
+  "scripts": {
+    "test": "hardhat test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chidodev/socol-oracle.git"
+  },
+  "keywords": [
+    "oracle",
+    "solidity"
+  ],
+  "author": "Donald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chidodev/socol-oracle/issues"
+  },
+  "homepage": "https://github.com/chidodev/socol-oracle#readme",
+  "devDependencies": {
+    "hardhat": "^2.11.1"
+  }
+}
