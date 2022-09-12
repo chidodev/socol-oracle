@@ -1,18 +1,16 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  const Oracle = await ethers.getContractFactory("TemperatureOracle");
+  const oracle = await Oracle.deploy(
+    '0x904125fefec7e9357d0161bb4ac6c65a3287052f',
+    '0x1400d86ffdb14f6dc821412fbb7bca3d6205493b',
+    '0xd916def9bcd3c36e3fe4e5be889d5104b086d692'
+  );
 
-  const lockedAmount = ethers.utils.parseEther("1");
+  await oracle.deployed();
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  console.log(`oracle deployed to ${oracle.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
