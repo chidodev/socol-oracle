@@ -4,6 +4,8 @@
   "description": "socol test project",
   "main": "hardhat.config.ts",
   "scripts": {
+    "clean": "hardhat test",
+    "compile": "TS_NODE_TRANSPILE=1 hardhat test",
     "test": "hardhat test"
   },
   "repository": {
