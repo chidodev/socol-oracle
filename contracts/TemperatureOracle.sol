@@ -38,7 +38,7 @@ contract TemperatureOracle {
     }
 
     // called by oracle
-    function setTemprature(uint256 _temperature) public {
+    function setTemperature(uint256 _temperature) public {
         // check if the node is whitelisted. here detect outliers
         bool whitelisted = false;
         uint256 index = 0;
@@ -46,7 +46,7 @@ contract TemperatureOracle {
             if (stakeholders[index] == msg.sender) {
                 whitelisted = true;
             }
-            index++;
+            index++; 
         }
 
         if (whitelisted) {
